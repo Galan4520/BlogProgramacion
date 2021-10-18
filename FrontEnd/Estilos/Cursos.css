@@ -189,6 +189,10 @@ article img {
 
 /*Para el footer de la página*/
 
+.MenuMain nav ul li a svg {
+    display: none;
+}
+
 
 /*--------------------- Para el footer-----------------------*/
 
@@ -275,6 +279,12 @@ footer {
 }
 
 @media screen and (max-width:800px) {
+    .Todo-Info {
+        transition: all 300ms cubic-bezier(1, 0, 0, 1);
+    }
+    .move-Todo-info {
+        transform: translateX(180px);
+    }
     .container-header {
         left: 0;
         width: 100%;
@@ -287,26 +297,34 @@ footer {
         text-align: left;
     }
     .MenuMain {
-        width: 230px;
+        width: 0px;
         height: 100vh;
         position: fixed;
         top: 80px;
         left: 0;
-        background: rgb(143, 141, 133);
+        background: rgb(255, 87, 87);
+        transition: all 300ms cubic-bezier(1, 0, 0, 1);
         overflow: hidden;
+        z-index: 1;
+    }
+    .MostrarLateral {
+        width: 180px;
+        transform: translateX(0px)
     }
     .MenuMain nav ul {
-        display: flex;
+        padding: 5px;
         flex-direction: column;
     }
     .MenuMain nav ul li {
+        font-size: 15px;
+        font-weight: 900;
         display: flex;
         max-width: 200px;
         height: 50px;
         align-items: flex-start;
     }
-    .MenuMain nav ul li a {}
     .MenuMain nav ul li a svg {
+        display: inline-block;
         width: 20px;
         margin-right: 10px;
         text-align: left;
@@ -315,5 +333,13 @@ footer {
     .container-cover,
     article {
         z-index: -1;
+    }
+    .container-aside {
+        flex-wrap: wrap;
+    }
+    #icon-menu {
+        display: flex;
+        position: fixed;
+        z-index: 1;
     }
 }
